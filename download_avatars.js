@@ -17,14 +17,19 @@ function getUserInput() {
 // handeling errors with switch and case
 //docs used - https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/switch
   switch (userInput.length) {
-    case 1: return { user: userInput[2], repo: userInput[3]};
+    case 4: return { user: userInput[2], repo: userInput[3]};
+    break;
+    case 3: err = 'No repository info provided.';
+    break;
+    case 2: err = 'No username or repo provided.';
     break;
     default: err = 'Unknown user input.';
   }
-  console.log(err, 'Please provide a username and repository. e.g.:');
+  console.log(err, 'Please provide a username and repository:');
   console.log('node download_avatars.js <userName> <repositoryName>');
   process.exit(); //stop app from running following errors
 }
+
 //simplfiying the function
 var userInput = getUserInput()
 
