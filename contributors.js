@@ -28,6 +28,10 @@ module.exports = {
     } else {
       console.log('Downloading ' + html.length + ' contributor avatars.');
       //loop through the user content for the avatars
+       for (contributor in html) {
+        var contributorCalled = html[contributor];
+        downloadImage.gitHubURL(contributorCalled.avatar_url, './avatars/' + contributorCalled.login);
+      }
     }
   }
 }
