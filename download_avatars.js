@@ -15,7 +15,7 @@ function getUserInput() {
   const userInput = process.argv;
   var err = '';
 // handeling errors with switch and case
-//docs used - https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/switch
+// docs used - https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/switch
 // New 404 - Error handling made some old code redundant - changed to only one case in switch
   switch (userInput.length) {
     case 4: return { user: userInput[2], repo: userInput[3]};
