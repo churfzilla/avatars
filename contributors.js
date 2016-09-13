@@ -1,4 +1,4 @@
-//export code to d_a.js - avoiding callback hell
+//export code to d_a.js
 module.exports = {
   get: function(repoOwner, repoName, callBack) {
 
@@ -21,14 +21,13 @@ module.exports = {
   downloadAvatars: function(err, contributors, html) {
     const downloadImage = require('./download_images.js');
     if (err) {
-      throw err;
+      console.log(err)
+    } else if (contributors.statusCode === 404) {
+      console.log("404 - REPO NOT FOUND");
+      process.exit();
     } else {
       console.log('Downloading ' + html.length + ' contributor avatars.');
       //loop through the user content for the avatars
-      for (contributor in html) {
-        var contributorCalled = html[contributor];
-        downloadImage.gitHubURL(contributorCalled.avatar_url, './avatars/' + contributorCalled.login);
-      }
     }
   }
 }
