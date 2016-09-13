@@ -2,13 +2,16 @@
   "name": "avatars",
   "version": "1.0.0",
   "description": "Requests",
-  "main": "index.js",
+  "main": "download_avatars.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^2.0.0",
+    "file-system": "^2.2.1",
+    "fs": "0.0.1-security",
     "request": "^2.74.0"
   }
 }
