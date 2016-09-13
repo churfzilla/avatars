@@ -27,11 +27,11 @@ function getUserInput() {
   }
   console.log(err, 'Please provide a username and repository:');
   console.log('node download_avatars.js <userName> <repositoryName>');
-  return;
-
+  process.exit(); //stop app from running following errors
 }
+
 //simplfiying the function
-var userInput = getUserInput();
+var userInput = getUserInput()
 
 //runs the function of the script in node
 contributors.get(userInput.user, userInput.repo, contributors.downloadAvatars);
