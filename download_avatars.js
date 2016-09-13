@@ -16,16 +16,13 @@ function getUserInput() {
   var err = '';
 // handeling errors with switch and case
 //docs used - https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/switch
+// New 404 - Error handling made some old code redundant - changed to only one case in switch
   switch (userInput.length) {
     case 4: return { user: userInput[2], repo: userInput[3]};
     break;
-    case 3: err = 'No repository info provided.';
-    break;
-    case 2: err = 'No username or repo provided.';
-    break;
-    default: err = 'Unknown user input.';
+    default: err = 'Unknown user input - ';
   }
-  console.log(err, 'Please provide a username and repository:');
+  console.log(err,'Please provide *ONLY* a username and repository:');
   console.log('node download_avatars.js <userName> <repositoryName>');
   process.exit(); //stop app from running following errors
 }
@@ -35,7 +32,6 @@ var userInput = getUserInput()
 
 //runs the function of the script in node
 contributors.get(userInput.user, userInput.repo, contributors.downloadAvatars);
-
 //Log into Git with correct user/token
 //check git users in repo - loop through all contributors
   //find avatar_urls
