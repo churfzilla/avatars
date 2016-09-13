@@ -1,10 +1,7 @@
-//export code to d_a.js
 module.exports = {
   get: function(repoOwner, repoName, callBack) {
-
     this.connectToGit('repos/' + repoOwner + '/' + repoName + '/contributors', callBack);
   },
-//connecting to git using user / token from .env file
   connectToGit: function(path, callBack) {
     const request = require('request');
     var gitLogIn = {
@@ -27,7 +24,7 @@ module.exports = {
       process.exit();
     } else {
       console.log('Downloading ' + html.length + ' contributor avatars.');
-      //loop through the user content for the avatars
+      //loop through the user content for the avatars - creates an avatar folder and names the avatars by user name
        for (contributor in html) {
         var contributorCalled = html[contributor];
         downloadImage.gitHubURL(contributorCalled.avatar_url, './avatars/' + contributorCalled.login);
