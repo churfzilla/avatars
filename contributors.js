@@ -17,7 +17,7 @@ module.exports = {
     };
     request(gitLogIn, callBack);
   },
-  // downloads the avatars and logs how many user avatars were saved - Requires download_images.js to function
+  // gets the avatar info and logs how many user avatars were saved - Requires download_images.js to function
   downloadAvatars: function(err, contributors, html) {
     const downloadImage = require('./download_images.js');
     if (err) {
