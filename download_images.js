@@ -11,7 +11,6 @@ module.exports = {
       },
     };
     //makes a path to the parent folder
-    //extract the name of an absolute path
     var pFolder = path.substr(0, path.lastIndexOf('/')+1);
     // syncs directory - Checks if there is a duplicate dir and uses it instead of creating a new one
     function mkDirSync(path) {
